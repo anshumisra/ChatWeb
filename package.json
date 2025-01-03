@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build":"npm i && npm i web-chat && npm run build web-chat",
+    "build":"npm i && npm i --prefix web-chat && npm run build --prefix web-chat",
   },
   "keywords": [],
   "author": "",
