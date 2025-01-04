@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
+    "start": "node -r dotenv/config server/index.js",
     "build": "npm i && npm i --prefix web-chat && npm i --prefix server && npm run build --prefix web-chat"
   },
   "keywords": [],
@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chat-web": "file:"
+    "chat-web": "file:",
+    "dotenv": "^16.4.7"
   }
 }
