@@ -1,10 +1,12 @@
 import express from 'express';
+import 'dotenv/config';
 import { Server } from 'socket.io';
 import { createServer } from 'http';
 import * as path from 'path';
 import cors from 'cors';
 
-const port = 3000;
+const port =process.env.PORT || 4000;
+
 const app = express();
 
 app.use(cors({
@@ -17,11 +19,12 @@ const server = createServer(app);
 
 //---
 const __dirname1=path.resolve();
-if(true)
+console.log(toString(__dirname1));
+if(process.env.NODE_ENV==="production")
 {
-    app.use(express.static(path.join(__dirname1,"../web-chat/dist")));
+    app.use(express.static(path.join(__dirname1,"../chat-web/web-chat/dist")));
     app.get("*",(req,res)=>{
-        res.sendFile(path.join(__dirname1, "../web-chat/dist/index.html"))
+        res.sendFile(path.join(__dirname1, "../chat-web/web-chat/dist/index.html"))
     })
 }else
 {
